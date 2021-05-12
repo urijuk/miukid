@@ -98,22 +98,70 @@
 // пример: если пользователь  ввел 2,5, 3,2 вывод должен быть 6.
 
 
-let a=1.2;
-let b=1.2;
-let result=a+b;
-console.log(result.toFixed(0));
+// let a=1.2;
+// let b=1.2;
+// let result=a+b;
+// console.log(result.toFixed(0));
 
-let c=2.5;
-let d=2.3;
-let result2=c+d;
-console.log(result2.toFixed(0));
+// let c=2.5;
+// let d=2.3;
+// let result2=c+d;
+// console.log(result2.toFixed(0));
 
-let e=2.5;
-let f=2.7;
-let result3=e+f;
-console.log(result3.toFixed(0));
+// let e=2.5;
+// let f=2.7;
+// let result3=e+f;
+// console.log(result3.toFixed(0));
 
-let x=2.5;
-let y=3.2;
-let result4=x+y;
-console.log(result4.toFixed(0))
+// let x=2.5;
+// let y=3.2;
+// let result4=x+y;
+// console.log(result4.toFixed(0))
+
+//==========LESSON 33==================//
+
+let add_to_bin = document.getElementsByClassName("addBin");
+    console.log(add_to_bin);
+
+let myFunction=function(evt){
+    evt.preventDefault();
+    
+    let product = this.parentNode.parentNode.querySelectorAll(".title_product");
+    let price_product = this.parentNode.parentNode.querySelectorAll(".price_product");
+    let img_product = this.parentNode.parentNode.querySelectorAll(".img_product img");
+
+    let creat_li = document.createElement('li');
+
+
+    console.log(product[0].innerText);
+    console.log(price_product[0].innerText);
+    console.log(img_product[0].src);
+
+   
+        
+
+    creat_li.innerHTML = '<div class="bin">\
+                                <div class="bin_img">\
+                                <img src="'+img_product[0].src+'" alt="">\
+                                </div>\
+                                <div class="bin_texts">\
+                                    <p class="bin_text_1">\
+                                        <a href="#">'+product[0].innerText+'</a>\
+                                    </p>\
+                                    <div class="">\
+                                        <span class="bin_text_bold">'+price_product[0].innerText+'</span>\
+                                        <span class="bin_text_underline">$42.00</span>\
+                                    </div>\
+                                    <div class="bin_icon">\
+                                            <i class="fab fa-bitbucket"></i>\
+                                    </div>\
+                                </div>\
+                            </div>';
+    let block_cart = document.querySelector('.block_Bin ul');
+    block_cart.appendChild(creat_li);
+
+};
+// evt.preventDefault(); не будет скорлит к началу страницы//
+
+for (var i=0;i<add_to_bin.length;i++) { 
+    add_to_bin[i].addEventListener('click', myFunction, false)}
