@@ -1,1 +1,1 @@
-https://github.com/urijuk/miukid/blob/main/script/add_to_bin.js
+https://github.com/urijuk/miukid
