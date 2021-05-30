@@ -47,26 +47,26 @@
 
 // ================HOMEWORK 34==========================//
 
-let object = {0: 'first', 1: 'second', 2: 'third', length: 3} ;
-console.log(object);
+// let object = {0: 'first', 1: 'second', 2: 'third', length: 3} ;
+// console.log(object);
 
 
 
-let array=[];
-for (let i=0; i<object.length; i++) {
-    array.push(object[i]);
-}
-console.log(array)
+// let array=[];
+// for (let i=0; i<object.length; i++) {
+//     array.push(object[i]);
+// }
+// console.log(array)
 
-let massiv = ["first", "second", "third" ];
+// let massiv = ["first", "second", "third" ];
 
-let vyvod1=[massiv[0]];
-let vyvod2=[massiv[1]];
-let vyvod3=[massiv[2]];
+// let vyvod1=[massiv[0]];
+// let vyvod2=[massiv[1]];
+// let vyvod3=[massiv[2]];
 
-let vyvod=[];
-vyvod.push(vyvod1)
-vyvod.push(vyvod2)
-vyvod.push(vyvod3)
+// let vyvod=[];
+// vyvod.push(vyvod1)
+// vyvod.push(vyvod2)
+// vyvod.push(vyvod3)
 
-console.log(vyvod)
+// console.log(vyvod)
