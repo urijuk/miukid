@@ -1,49 +1,17 @@
-// let string = "text";
-// let letObj = new String (string);
+// написать функцию которая запрашивает пользователю ввести число,
+// функция должна проверять что ввел пользователь строку или тип число,
+// при этом не конвертируя данные который ввел пользователь.
+// если пользователь ввел тип чисто то преобразуйте это 
+// в шестнадцатеричный код, восьмеричный и двоичный код,
+// если это не строка то на консоли выводится что это не строка.
 
-// console.log(string);
-// console.log(letObj);
+// ===============Homework 38=======================
 
-// console.log(typeof(string));
-// console.log(letObj)
+let input = +prompt ("ввести число: ")
 
-// let car = {
-//     kuzov:"железо",
-//     koleso:"4 колеса",
-//     modal: function() {
-//         console.log("hello");
-//     }
-// };
-
-// // let mb = {
-// //     marka:"мерс",
-// //     god:"2021"
-// // };
-// let mb = Object.create(car);
-// mb = {
-//     marka:"мерс",
-//     god:"2021"
-// };    
-
-
-// // mb.__proto__ = car;
-// // Object.setPrototypeOf(mb, car);
-
-// console.log (mb.kuzov);
-// console.log (mb.modal);
-// mb.modal();
-
-let salary = {
-    almaz: 1200,
-    adilet: 1300,
-    nursultan: 3000
-};
-let bonus = {
-    almaz: 400,
-    adilet: 300,
-    nursultan: 200
+if (typeof (input) === 'number') {
+    let result = input;
+    console.log(result.toString(16), result.toString(8), result.toString(2));
+} else if(typeof (input) !== 'number') {
+    console.log("это не число")
 }
-
-console.log(salary.almaz+bonus.almaz);
-console.log(salary.adilet+bonus.adilet);
-console.log(salary.nursultan+bonus.nursultan)
