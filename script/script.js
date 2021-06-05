@@ -12,6 +12,6 @@ let input = +prompt ("ввести число: ")
 if (typeof (input) === 'number') {
     let result = input;
     console.log(result.toString(16), result.toString(8), result.toString(2));
-} else if(typeof (input) !== 'number') {
+} else if(typeof (input) === 'isNaN') {
     console.log("это не число")
 }

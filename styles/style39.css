@@ -1203,3 +1203,15 @@ h3.footer_title {
         margin: 0px;
     }
 }
+/* добавленные в корзину         */
+.img_bin_js{
+    width: 80px;
+    height: 80px;
+}
+.block_Bin ul li{
+    margin-left: 0px;
+    list-style: none;
+}
+.block_Bin ul li:nth-child(2) {
+    margin-left: 0px;
+}

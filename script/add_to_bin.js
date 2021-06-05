@@ -1,72 +1,66 @@
 
 
-//=======================LESSON 34========================//
+let add_to_bin = document.getElementsByClassName("addBin");
+    console.log(add_to_bin);
 
-// let arr=[1, 2, 3, 4, 5];
-// console.log(arr);
-// console.log(arr.pop()); //последний извлекает//
-// console.log(arr.shift()); //первый извлекает//
-// console.log(arr);
+let myFunction=function(evt){
+    evt.preventDefault();
+    
+    let product = this.parentNode.parentNode.querySelectorAll(".title_product");
+    let price_product = this.parentNode.parentNode.querySelectorAll(".price_product");
+    let img_product = this.parentNode.parentNode.querySelectorAll(".img_product img");
 
-// arr.push(10); //добавляет в конец//
-// console.log(arr);
-
-// arr.unshift(15) //добавляет в начало//
-// console.log(arr);
-
-// delete arr[0];
-// delete arr[1];
-// console.log(arr)
-
-// arr[50] = 20;
-// console.log(arr)
-
-// let arr=[1, 2, 3, 4, 5];
-// for (let i=0; i<arr.length; i++) {
-//     console.log(arr[i])
-// }
-
-// for (let value of arr) {
-//     console.log(value)
-// }  
-
-// arr.forEach(function(item, index, arr){
-//     console.log("идекс: " +index+ " значение: " +item+ " из массива: " +arr)
-// });
-
-// let object = {0:1, 1:2, 2:3, lenth:3};
-// console.log(object);
+    let creat_li = document.createElement('li');
 
 
+    console.log(product[0].innerText);
+    console.log(price_product[0].innerText);
+    console.log(img_product[0].src);
 
-// let array=[];
-// for (let i=0; i<object.lenth; i++) {
-//     array.push(object[i])
-// }
-// console.log(array)
+   
+        
 
-// ================HOMEWORK 34==========================//
+    creat_li.innerHTML = '<div class="bin">\
+                                <div class="bin_img_js">\
+                                <img class="img_bin_js" src="'+img_product[0].src+'" alt="">\
+                                </div>\
+                                <div class="bin_texts">\
+                                    <p class="bin_text_1">\
+                                        <a href="#">'+product[0].innerText+'</a>\
+                                    </p>\
+                                    <div class="">\
+                                        <span class="bin_text_bold">'+price_product[0].innerText+'</span>\
+                                        <span class="bin_text_underline">$42.00</span>\
+                                    </div>\
+                                    <div class="bin_icon">\
+                                        <a href="#"><i class="fab fa-bitbucket"></i></a>\
+                                    </div>\
+                                </div>\
+                            </div>';
+    let block_cart = document.querySelector('.block_Bin ul');
+    block_cart.appendChild(creat_li);
+    
+    // удаление товара с корзины    //
+    let click_trash = document.querySelectorAll("bin_icon");
 
-// let object = {0: 'first', 1: 'second', 2: 'third', length: 3} ;
-// console.log(object);
+    for (var i=0; i<click_trash.length; i++) { 
+        class_trash[i].addEventListener('click', fun_delete, false);
+    }
+    
+    function fun_delete(evt) {
+        evt.preventDefault();
+        alert("delete");
+
+       this.parentNode.parentNode.parentNode.remove();
+    };  
+
+};
+// evt.preventDefault(); не будет скорлит к началу страницы//
+
+for (var i=0;i<add_to_bin.length;i++) { 
+    add_to_bin[i].addEventListener('click', myFunction, false)}
 
 
 
-// let array=[];
-// for (let i=0; i<object.length; i++) {
-//     array.push(object[i]);
-// }
-// console.log(array)
 
-// let massiv = ["first", "second", "third" ];
 
-// let vyvod1=[massiv[0]];
-// let vyvod2=[massiv[1]];
-// let vyvod3=[massiv[2]];
-
-// let vyvod=[];
-// vyvod.push(vyvod1)
-// vyvod.push(vyvod2)
-// vyvod.push(vyvod3)
-
-// console.log(vyvod)
