@@ -54,10 +54,13 @@ let myFunction=function(evt){
         // console.log(this)
         // alert("delete");
         total_price()
+        count_product()
 
        evt.parentNode.parentNode.remove();
     };  
-    total_price()
+    total_price();
+  
+    count_product()
 };
 // evt.preventDefault(); не будет скорлит к началу страницы//
 
@@ -78,3 +81,8 @@ function total_price() {
     document.getElementsByClassName("span_cart span2")[0].innerHTML = `$ ${total_price}`;
     document.querySelectorAll(".total_text .total_price")[0].innerHTML = `$ ${total_price}`;
 }
+
+function count_product() {
+    let count_product = document.getElementsByClassName("bin").length;
+    document.getElementsByClassName("span_cart span1")[0].innerHTML = count_product;
+} 
