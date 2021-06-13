@@ -1,17 +1,15 @@
-// написать функцию которая запрашивает пользователю ввести число,
-// функция должна проверять что ввел пользователь строку или тип число,
-// при этом не конвертируя данные который ввел пользователь.
-// если пользователь ввел тип чисто то преобразуйте это 
-// в шестнадцатеричный код, восьмеричный и двоичный код,
-// если это не строка то на консоли выводится что это не строка.
+let click  = document.getElementById("btn1");
+let click2 = document.getElementById("btn2");
+let click3 = document.getElementById("btn3");
 
-// ===============Homework 38=======================
+// click.onclick = function() {
+//     alert("click")
+// }
 
-let input = +prompt ("ввести число: ")
-
-if (typeof (input) === 'number') {
-    let result = input;
-    console.log(result.toString(16), result.toString(8), result.toString(2));
-} else if(typeof (input) === 'isNaN') {
-    console.log("это не число")
+let delet_btn = (e) => {
+    e.target.remove();
 }
+
+click.addEventListener('click', delet_btn );
+click2.addEventListener('click', delet_btn );
+click3.addEventListener('click', delet_btn );  
