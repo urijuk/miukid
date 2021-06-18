@@ -1,0 +1,30 @@
+
+
+class user {
+
+    constructor (name, surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    getFullName() {
+        return this.name + this.surname;
+    }
+}
+
+class student extends user {
+   
+    constructor (name, surname, year, this_year) {
+        super(name, surname);
+        this.year = year;
+        this.this_year = this_year;
+    }
+
+    getCourse() {
+        return this.this_year-this.year
+    }
+}
+ const i_am = new student ("Urmat ", "Zhunushov", 2020, 2021);
+
+ i_am.getCourse();
+ console.log(`I ${i_am.getFullName()}`, `learning in course ${i_am.getCourse()}`);
