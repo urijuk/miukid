@@ -1,81 +1,81 @@
-//========================LESSON 45=======================//
-
-// class ploshad {
-
-//     constructor (width, height) {
-//         this.width = width;
-//         this.height = height;
-//     }
-
-//     calcPloshad() {
-//         return this.width * this.height;
-//     }
-
-//     calcPloshad2() {
-//         return this.width + this.height;
-//     }
-// }
-
-// const res_area = new ploshad(10, 20);
-// const res_area2 = new ploshad(30, 40);
-// console.log(res_area.calcPloshad());
-// console.log(res_area2.calcPloshad2());
-
-// class ploshadText extends ploshad {
-//     // extends связка двух классов
-//     constructor (width, height, text, value) {
-//         super(width, height);
-//         this.text = text;
-//         this.value = value;
-//     }
-
-//     showText() {
-//         console.log(`Text: ${this.text} | Value: ${this.value}`);
-//     }
-// }
-//  const block = new ploshadText (20, 20, "Urmat", "Тема урока класс");
-
-//  block.showText();
-//  console.log(block.calcPloshad());
-
- //===================HOMEWORK 45==================//
-
-//  Реализуйте класс Student (Студент), который будет наследовать от класса User,
-//  подобно тому, как это сделано в теоретической части урока. Этот класс
-//  должен иметь следующие свойства: name (имя, наследуется от User),
-//  surname (фамилия, наследуется от User), year (год поступления в вуз).
-//  Класс должен иметь метод getFullName() (наследуется от User),
-//  с помощью которого можно вывести одновременно имя и фамилию студента.
-//  Также класс должен иметь метод getCourse(), который будет выводить 
-//  текущий курс студента (от 1 до 5). Курс вычисляется
-//  так: нужно от текущего года отнять год поступления в вуз.
-//  Текущий год получите самостоятельно.
-
-class user {
-
-    constructor (name, surname) {
-        this.name = name;
-        this.surname = surname;
+class cartProduct {
+    constructor (tooltips, img,  title, orginPrice, oldPrice, innerBlock) {
+        this.tooltips = tooltips;
+        this.img = img;
+        this.title = title;
+        this.orginPrice = orginPrice;
+        this.oldPrice = oldPrice;
+        this.innerBlock = document.querySelector(innerBlock);
+        this.valuta = 85;
+        this.convertToUSD();
     }
 
-    getFullName() {
-        return this.name + this.surname;
-    }
-}
-
-class student extends user {
-   
-    constructor (name, surname, year, this_year) {
-        super(name, surname);
-        this.year = year;
-        this.this_year = this_year;
+    convertToUSD() {
+        this.orginPrice = this.orginPrice / this.valuta
     }
 
-    getCourse() {
-        return this.this_year-this.year
+    render() {
+        const div = document.createElement("div");
+        div.innerHTML = `
+                        <div class="products_block tovar">
+                            <a href="">
+                                <div class="img_product">
+                                    <div class="img_new bg_blue">${this.tooltips}</div>
+                                    <img src=${this.img} alt="">
+                                    <div class="desk_img">
+                                        <div class="img_text">
+                                            <div class="img_title">out of stock!</div>
+                                            <span class="img_orange">see</span>
+                                            <span class="img_cursiv">similar products</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="desk_img">
+                                        <div class="img_text">
+                                            <div class="img_title">out of stock!</div>
+                                            <span class="img_orange">see</span>
+                                            <span class="img_cursiv">similar products</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title_product"><a href="#">${this.title}</a></div>
+
+                                <div class="star_block dflex">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>6 Review(s)</span>
+                                </div>
+
+                                <div class="price_product_block">
+                                    <span class="currency">$</span>
+                                    <span class="oprice">${this.orginPrice}</span>
+                                    <del class="price_product_del">${this.oldPrice}</del>
+                                </div>
+                                <div class="icons__block dnone">
+                                    <div class="icon_product addBin"> <i class="icpro fas fa-briefcase"></i></div>
+                                    <div class="icon_product balans"><i class="icpro fa fa-balance-scale"></i></div>
+                                    <div class="icon_product like"><i class="icpro fa fa-heart "></i></div>
+                                </div>
+                                <div class="quick_block dnone">
+                                    <i class="fas fa-arrows-alt"></i>
+                                    <span class="quick">Quick view</span>
+                                </div>
+                            </a>
+                        </div>
+        `;
+        this.innerBlock.append(div);
     }
 }
- const i_am = new student ("Urmat ", "Zhunushov", 2020, 2021);
 
- i_am.getCourse();
- console.log(`I ${i_am.getFullName()}`, `learning in course ${i_am.getCourse()}`);
+new cartProduct(
+    "new block",
+    'http://127.0.0.1:5501/img/insta5.jpg',
+    "New Title",
+    1545,
+    2545,
+    ".product_container",
+).render();
