@@ -18,5 +18,8 @@
   "homepage": "https://github.com/urijuk/miukid#readme",
   "devDependencies": {
     "json-server": "^0.16.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }
