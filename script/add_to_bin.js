@@ -162,7 +162,7 @@ class cartProduct {
 
 new cartProduct(
     "new block",
-    'http://127.0.0.1:5501/img/insta5.jpg',
+    "http://127.0.0.1:5501/img/insta5.jpg",
     "New Title",
     1545,
     2545,
