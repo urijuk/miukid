@@ -160,6 +160,43 @@ class cartProduct {
     }
 }
 
+
+const getProduct = async (url) => {
+
+    const result = await fetch(url);
+
+    if(!result.ok) {
+        throw new Error(`Ошибка fetch ${url} статус ${result.status}`)
+    };
+
+    return await result.json();
+};
+
+getProduct("http//localhost:3000/products")
+.then(data => {
+
+    // console.log(data);
+
+    data .forEach(element => {
+        console.log(element.title);
+
+        new cartProduct(
+            element.img,
+            element.altimg,
+            element.title,
+            element.top_ttl,
+            element.orgin_price,
+            element.old_price,
+            ".product_container",
+        ).render();
+
+
+    });
+
+});
+
+
+
 new cartProduct(
     "new block",
     "http://127.0.0.1:5501/img/insta5.jpg",
