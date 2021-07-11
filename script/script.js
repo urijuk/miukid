@@ -87,3 +87,39 @@ console.log(userData.getAge());
 userData.setAge(90);
 
 console.log(userData.getAge());
+
+///////////////////////////////
+
+class User {
+
+    constructor (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    get () {
+        console.log(`Имя пользователя: ${this.name}, Возраст: ${this.age}`);
+    }
+
+    getAge () {
+        return this.age;
+    }
+
+    setAge (age) {
+
+        if(typeof age == "number" && age>1 && age<150) {
+            this.age = age;
+        } else {
+            console.log("Недопустимое значение!");
+        }
+    };
+}
+
+const userData = new User("Urmat", 42);
+
+console.log(userData.name);
+console.log(userData.getAge());
+
+userData.setAge(90);
+
+console.log(userData.getAge());
