@@ -1,6 +1,2 @@
-const myModule = require('./js/main');
-
-const myModuleElem = new myModule();
-
-myModuleElem.hello();
-myModuleElem.bye();
+import { name, sname } from "./js/main";
+console.log(`hello ${name} ${sname}`);
